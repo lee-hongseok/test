@@ -1,0 +1,20 @@
+<%a = @a%>
+<div style="width:100%; height:auto; backgound-color:#f1f1f1;">
+  <pre style="font-family:sanserif; padding:30px;">
+    퀘스트제목 <%=a.title%>
+    퀘스트 카테고리 <%=a.category%>
+    퀘스트 내용 <%=a.content%>
+    <%a.posts.all.each do |x|%>
+    대제목  <%=x.title%>
+      <%x.replies.all.each do |y|%>
+       소제목 <%=y.title%>
+       소내용 <%=y.content%>
+       <%end%>
+    <%end%>
+
+    <%=a.schedule%>
+  </pre>
+</div>
+
+
+

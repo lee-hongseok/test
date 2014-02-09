@@ -1,0 +1,81 @@
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style> textarea {width:70%; height:100px; overflow:visible;} </style>
+
+  <div style="width:100%; height:auto; background-color:gray;border-radius:5px; border:1px solid; ">
+<h1>퀘스트 정보 </h1>
+<form action="/home/edit_process" method="POST">
+  퀘스트 제목     <input name="quest_title"value="<%=@q.title%>">
+  <br>
+  퀘스트 종류  <input name="quest_category" value="<%=@q.category%>">
+  <br>
+  퀘스트 내용   <textarea name="quest_content"onkeyup="resize(this)"><%=@q.content%> </textarea>
+  <br>
+  퀘스트 일정  <input name="quest_schedule"value="<%=@q.schedule%>">
+  <br>
+  <input type="submit">
+</form>
+</div>
+<br>
+
+
+  <div style="width:100%; height:auto; background-color:gray;border-radius:5px; border:1px solid; ">
+<h1> 알림사항 추가</h1>
+<form action="add_post" >
+  알림사항 제목 (ex:"권장사항", "주의사항")  <input name="title">
+  <input type="submit">
+</form>
+</div>
+<br>
+적용된 부분
+<%@q.posts.each do |x| %>
+  <div style="width:100%; height:auto; background-color:gray;border-radius:5px; border:1px solid; ">
+
+    알림사항 제목 : <%=x.title%> 
+    <div style="width:100%; text-align:right;">
+    <form action="delete_post">
+      <input type="hidden" name="post_id" value="<%=x.id%>">
+      <input type="submit" value="삭제">
+    </form>
+  </div>
+
+    <center>
+    <%x.replies.each do |y| %> 
+ <div style="position:relative; width:70%; height:auto; background-color:#f1f1f1;border-radius:5px; border:1px solid;text-align:left;">
+    <form action="edit_reply">
+        알림사항 소제목 : <input name="title" value="<%=y.title%>">
+        <br>
+        알림사항 소내용 : <textarea name="content" style="font-family:sanserif; width:80%; " onkeyup="resize(this)" onload="resize(this)" ><%=y.content%></textarea>
+        <div style="width:100%; text-align:right;">
+          <input type="submit" value="수정">
+        </div>
+    <div style="width:100%; text-align:right;">
+        <form action ="delete_reply">
+          <input name="reply_id" type="hidden" value="<%=y.id%> ">
+          <input type="submit" value="삭제">
+        </form>
+      </div>
+    </div>
+    <%end%>
+    <div style="positon:relative; width:70%; height:auto; background-color:gray;opacity:0.7; border-radius:5px; border:1px solid; text-align:left;">
+      <form action="add_reply">
+        알림사항 소제목 추가 <input name="title">
+        <br>
+        알림사항 소내용 추가 <textarea name="content"></textarea>
+
+        <input name="post_id" value="<%=x.id%>" type="hidden">
+        <input type="submit">
+
+      </form>
+  </center>
+    </div>
+
+  </div>
+  <br>
+<%end%>
+
+<script>
+function resize(obj) {
+  obj.style.height = "1px";
+  obj.style.height = (20+obj.scrollHeight)+"px";
+}
+</script>

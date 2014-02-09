@@ -1,0 +1,136 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+div.wrap{
+	position:fixed;
+    top:0px;
+	left:0px;
+	height :1280px;
+    width :100%;
+}
+
+div.title_bar {
+    height :45px;
+    background-color :#f5f5f5;
+}
+a.title {
+    position :relative;
+    top : 6.5px;
+    font-size:30px;
+	font-family:"roboto-condensed";
+	color: #646464;
+}
+
+div.login_div{
+    position :absolute;
+    top:545px;
+    left:75px;
+    width: 600px;
+    height: 155px;
+}
+
+div.id{
+    position :relative;
+    top: 0px;
+    left: 0px;
+    height:50px;
+    width:600px;
+}
+
+input.id_input{
+    height:32px;
+    width:600px;
+    font-size:32px;
+    border:solid 1px #989898;
+    color: black;
+    border:0px;
+    background-color:transparent;
+    height: 55px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+div.pw{
+    position :relative;
+    top: 0px;
+    left: 0px;
+    height:50px;
+    width:600px;
+}
+
+input.pw_input{
+    height:32px;
+    width:600px;
+    font-size:32px;
+    border:solid 1px #989898;
+    color: black;
+    border:0px;
+    background-color:transparent;
+    height: 55px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+div.login_box{
+    background-color:#646464;
+    border-radius:15px;
+    position:fixed;
+    top:780px;
+    left:549px;
+    width:129px;
+    height:63px;
+    line-height:63px;
+    font-size:30px;
+	font-family:"roboto-condensed";
+}
+div.page_box{
+    background-color:grey;
+    border-radius:15px;
+    position:fixed;
+    top:920px;
+    left:549px;
+    width:129px;
+    height:63px;
+    line-height:63px;
+    font-size:30px;
+	font-family:"roboto-condensed";
+}
+a.login_box{
+}
+
+div.footer {
+    position :relative;
+    top:88.984375%;
+    height:11.015625%;
+	background-image:url('../img/patterns.png');
+}
+
+div.join {
+	position :absolute;
+	top:60px;
+	left:0px;
+	font-size:30px;
+	height:32px;
+	width:240px;
+  color:yellow;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+div.login {
+	position :absolute;
+	top:60px;
+	left:240px;
+	width:240px;
+	height:32px;
+	font-size:30px;
+	color:#ffffff;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+div.find {
+	position :absolute;
+	top:60px;
+	left:480px;
+	height:32px;
+	width:240px;
+	font-size:30px;
+  color:yellow;
+	font-family: 'Nanum Gothic', sans-serif;
+}

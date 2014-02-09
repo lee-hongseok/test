@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width:720"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>2yrs</title>
+
+      </head>
+<%a = @a%>
+    <body style="margin:0px;">
+        <div style="position:absolute; top:550px; left:56px; font-size:33px;"><%=a.title%></div> 
+        <div style="position:absolute; top:613px; left:28px;height:88px; width:663px;  text-align:right; margin:0px;  font-size:33px;"><p style="padding:23px 23px 23px 23px; margin:0px;"><%=a.category%></p></div> 
+      <div style="width:700px; height:auto important!; margin: 0px;">
+        <img src="img/demo_top.jpg" style="width:720px; height:auto; margin:0px;" />
+        <div style="width:665px; height:auto; background-color:#f7f7f8; margin:-43px 0 0 0; padding:0 28px 28px 28px">
+            <div style="display:block; width:618px; background-color:white; color:#a8a5a1; padding:0 23px 23px 23px;">
+                <pre style="font-size:33px;word-wrap: break-word;"><%=a.content%></pre>
+            </div>
+            <br>
+<%a.posts.all.each do |x| %>            
+  <div style="width:664px; height:89px;  background-color:white;">
+    <p style="padding:23px 23px 23px 23px; font-size:33px; margin:0px"><%=x.title%></p>
+  </div>
+  <%x.replies.all.each do |y|%>
+    <div style="width:664px;min-height:89px; border-top:1px solid #e1dedb; background-color:white;">
+      <p style="padding:23px 23px 23px 23px; font-size:33px; color:#a8a5a1; margin:0px"><%=y.title%></p>
+      <pre style="padding:23px 23px 23px 23px; font-size:33px; margin:-88px 0 0 0px; text-align:right; word-wrap:break-word;font-family:sanserif;"><%=y.content%></pre>
+    </div>
+  <%end%>
+  <br>
+<%end%>
+
+            <div style="width:664px; min-height:89px; background-color:white;">
+                <p style="padding:23px 23px 23px 23px; font-size:33px; margin:0px">퀘스트 일정</p>
+                
+            </div>
+            <div style="width:664px;min-height:89px; border-top:1px solid #e1dedb; background-color:white;">
+                <p style="padding:23px 23px 23px 23px; font-size:33px; color:#a8a5a1; margin:0px">일정</p>
+                <p style="padding:23px 23px 23px 23px; font-size:33px; margin:-88px 0 0 0px; text-align:right;"><%=a.schedule%></p>
+            </div>
+            <div style="width:664px;min-height:89px; border-top:1px solid #e1dedb; background-color:white;">
+                <p style="padding:23px 23px 23px 23px; font-size:33px; color:#a8a5a1; margin:0px">알림설정</p>
+                <p style="padding:23px 23px 23px 23px; font-size:33px; margin:-88px 0 0 0px; text-align:right;">-</p>
+                
+            </div>
+            <br>
+            <div style="width:664px; min-height:89px; background-color:white;">
+                <p style="padding:23px 23px 23px 23px; font-size:33px; margin:0px">퀘스트 삭제</p>
+            </div>
+            <br>
+            
+        </div>
+        
+      </div>
+    </body>
+   
+</html>
